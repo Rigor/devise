@@ -64,6 +64,11 @@ module Devise
     :authlogic_sha512 => 128
   }
 
+  # Defaults to ApplicationController. This should be set early
+  # in the initialization process and should be set to a string.
+  mattr_accessor :parent_controller
+  @@parent_controller = "ApplicationController"
+
   # Custom domain for cookies. Not set by default
   mattr_accessor :cookie_options
   @@cookie_options = {}
@@ -84,7 +89,7 @@ module Devise
   # False by default for backwards compatibility.
   mattr_accessor :case_insensitive_keys
   @@case_insensitive_keys = false
-  
+
   # Keys that should have whitespace stripped.
   # False by default for backwards compatibility.
   mattr_accessor :strip_whitespace_keys

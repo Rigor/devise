@@ -20,7 +20,7 @@ module Devise
     end
 
     def self.default_url_options(*args)
-      ApplicationController.default_url_options(*args)
+      Devise.parent_controller.constantize.default_url_options(*args)
     end
 
     def respond

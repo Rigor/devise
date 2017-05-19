@@ -1,4 +1,4 @@
-class Devise::OmniauthCallbacksController < ApplicationController
+class Devise::OmniauthCallbacksController < Devise.parent_controller.constantize
   include Devise::Controllers::InternalHelpers
 
   def failure

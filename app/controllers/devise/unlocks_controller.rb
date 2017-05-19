@@ -1,4 +1,4 @@
-class Devise::UnlocksController < ApplicationController
+class Devise::UnlocksController < Devise.parent_controller.constantize
   prepend_before_filter :require_no_authentication
   include Devise::Controllers::InternalHelpers
 
